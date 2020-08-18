@@ -6,12 +6,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import uz.crm.system.entity.enums.GenderEnum;
 import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -20,17 +18,6 @@ import java.util.List;
 @NoArgsConstructor
 @Entity(name = "users")
 public class User extends AbsEntity implements UserDetails {
-
-    @Column(nullable = false)
-    private String firstName;
-
-    @Column(nullable = false)
-    private String lastName;
-
-    private Date birthDate;
-
-    @Enumerated(value = EnumType.STRING)
-    private GenderEnum gender;
 
     @Column(nullable = false, unique = true, length = 13)
     private String phoneNumber;
@@ -48,25 +35,6 @@ public class User extends AbsEntity implements UserDetails {
     private boolean accountNonLocked = true;
     private boolean credentialsNonExpired = true;
     private boolean enabled = true;
-
-    public User(String firstName, String lastName, String middleName, Date birthDate, GenderEnum gender, String phoneNumber, String password, List<Role> roles) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.gender = gender;
-        this.phoneNumber = phoneNumber;
-        this.password = password;
-        this.roles = roles;
-    }
-
-    public User(String firstName, String lastName, String middleName, String phoneNumber, String password, List<Role> roles) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.password = password;
-        this.roles = roles;
-    }
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

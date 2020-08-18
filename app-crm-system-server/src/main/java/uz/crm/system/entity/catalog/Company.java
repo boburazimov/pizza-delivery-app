@@ -3,30 +3,18 @@ package uz.crm.system.entity.catalog;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
+import uz.crm.system.entity.template.AbsEntity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.util.UUID;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Company {
-
-    @Id
-    @Type(type = "org.hibernate.type.PostgresUUIDType")
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    private UUID id;
-
-    @Column(nullable = false, unique = true)
-    private String fullName;
+public class Company extends AbsEntity {
 
     private String address;
 
