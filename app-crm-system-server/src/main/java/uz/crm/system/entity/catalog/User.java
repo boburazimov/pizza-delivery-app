@@ -52,7 +52,6 @@ public class User extends AbsEntity implements UserDetails {
     public User(String firstName, String lastName, String middleName, Date birthDate, GenderEnum gender, String phoneNumber, String password, List<Role> roles) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.middleName = middleName;
         this.birthDate = birthDate;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
@@ -63,7 +62,6 @@ public class User extends AbsEntity implements UserDetails {
     public User(String firstName, String lastName, String middleName, String phoneNumber, String password, List<Role> roles) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.middleName = middleName;
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.roles = roles;
