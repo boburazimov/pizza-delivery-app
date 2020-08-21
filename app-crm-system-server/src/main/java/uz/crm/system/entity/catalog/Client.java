@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import uz.crm.system.entity.documents.BasketDoc;
 import uz.crm.system.entity.enums.GenderEnum;
+import uz.crm.system.entity.template.AbEntity;
 import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
@@ -16,7 +18,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Client extends AbsEntity {
+public class Client extends AbEntity {
+
+    @Column(nullable = false, length = 32)
+    private String fullName;
 
     @Enumerated(value = EnumType.STRING)
     private GenderEnum gender;
@@ -39,4 +44,7 @@ public class Client extends AbsEntity {
     private List<Address> addresses;
 
     private String extraInfo;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    private List<BasketDoc> basketDocs;
 }

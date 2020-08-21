@@ -23,13 +23,13 @@ public class Address {
             inverseJoinColumns=@JoinColumn(name="client_id"))
     private List<Client> clients;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Country country;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Region region;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private District district;
 
     private String StreetHome;
