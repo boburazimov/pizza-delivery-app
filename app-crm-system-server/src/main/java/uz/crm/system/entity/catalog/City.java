@@ -6,8 +6,10 @@ import uz.crm.system.entity.template.AbsIdEntity;
 
 import javax.persistence.Entity;
 
+/** Города Республики (Ташкент, Самарканд..) **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-public class Country extends AbsIdEntity {
+public class City extends AbsIdEntity {
 }

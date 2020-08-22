@@ -6,6 +6,8 @@ import uz.crm.system.entity.template.AbsIdEntity;
 
 import javax.persistence.Entity;
 
+/** Единица измерение товаров (шт, кг...) **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity

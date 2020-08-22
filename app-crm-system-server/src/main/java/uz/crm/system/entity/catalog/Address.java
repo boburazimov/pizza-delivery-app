@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
+/** Для хранение адреса клиентов и доставки **/
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,7 +26,7 @@ public class Address {
     private List<Client> clients;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Country country;
+    private City city;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Region region;

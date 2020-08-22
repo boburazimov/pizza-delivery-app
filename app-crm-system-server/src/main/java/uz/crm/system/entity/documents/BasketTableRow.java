@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.catalog.Price;
 import uz.crm.system.entity.catalog.Product;
 import uz.crm.system.entity.template.AbEntity;
 
@@ -12,6 +11,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+
+/** Табличная часть Корзинки **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -27,10 +28,10 @@ public class BasketTableRow extends AbEntity {
     private Product product;
 
     @Column(length = 9, nullable = false)
-    private Double count;
+    private Double amount;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Price price;
+    private PriceTableRow priceTableRow;
 
     private Double summary;
 }

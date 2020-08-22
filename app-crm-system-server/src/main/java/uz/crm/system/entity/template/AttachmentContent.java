@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
@@ -17,5 +18,6 @@ public class AttachmentContent extends AbsEntity {
 
     @OneToOne
     private Attachment attachment;
+
     private byte[] content;
 }

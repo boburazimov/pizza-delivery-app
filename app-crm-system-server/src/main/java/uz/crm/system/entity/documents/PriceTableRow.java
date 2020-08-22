@@ -1,17 +1,21 @@
-package uz.crm.system.entity.catalog;
+package uz.crm.system.entity.documents;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uz.crm.system.entity.catalog.PriceType;
+import uz.crm.system.entity.catalog.Product;
 import uz.crm.system.entity.documents.SetPriceDoc;
 
 import javax.persistence.*;
+
+/** Табличная часть документа установки цен для продуктов (номенклатуры) **/
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Price {
+public class PriceTableRow {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -9,13 +9,14 @@ import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
-import uz.crm.system.entity.catalog.Price;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+
+/** Табличная часть документа Установки цен **/
 
 @Data
 @AllArgsConstructor
@@ -36,7 +37,7 @@ public class SetPriceDoc {
     private Date setPriceDate;
 
     @OneToMany(mappedBy = "priceDoc")
-    private List<Price> prices;
+    private List<PriceTableRow> priceTableRows;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)

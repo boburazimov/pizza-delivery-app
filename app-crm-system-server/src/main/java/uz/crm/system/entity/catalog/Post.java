@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+/** Должности для разграничение доступов в ресусрам **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

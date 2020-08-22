@@ -9,6 +9,8 @@ import uz.crm.system.entity.template.AbsIdEntity;
 
 import javax.persistence.Entity;
 
+/** Головное предприятие в случии если будут дочерные или же сетевые ресораны **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

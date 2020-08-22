@@ -13,6 +13,8 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+/** Клиентская база **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

@@ -11,6 +11,8 @@ import uz.crm.system.entity.template.AbEntity;
 import javax.persistence.*;
 import java.util.List;
 
+/** Корзина для клиентов (в телеграме) **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

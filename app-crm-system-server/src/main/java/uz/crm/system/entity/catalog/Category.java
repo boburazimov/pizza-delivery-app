@@ -7,6 +7,8 @@ import uz.crm.system.entity.template.AbsIdEntity;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+/** Категория для товаров **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
