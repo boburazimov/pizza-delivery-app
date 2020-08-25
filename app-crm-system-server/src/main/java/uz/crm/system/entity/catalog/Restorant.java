@@ -16,6 +16,9 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Restorant extends AbsEntity {
 
+    @ManyToOne(optional = false)
+    private Company company;
+
     private String adress;
 
     @ManyToOne(optional = false)

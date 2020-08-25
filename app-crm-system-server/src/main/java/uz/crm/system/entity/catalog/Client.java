@@ -39,11 +39,8 @@ public class Client extends AbEntity {
     @Column(unique = true)
     private String email;
 
-    @ManyToMany
-    @JoinTable (name="client_address",
-            joinColumns=@JoinColumn (name="client_id"),
-            inverseJoinColumns=@JoinColumn(name="address_id"))
-    private List<Address> addresses;
+//    @OneToMany(cascade = CascadeType.ALL)
+//    private List<Address> addresses;
 
     private String extraInfo;
 

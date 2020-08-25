@@ -19,6 +19,9 @@ import java.util.List;
 @Entity(name = "users")
 public class User extends AbsEntity implements UserDetails {
 
+    @ManyToOne(optional = false)
+    private Restorant restorant;
+
     @Column(nullable = false, unique = true, length = 13)
     private String phoneNumber;
 

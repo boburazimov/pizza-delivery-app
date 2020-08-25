@@ -19,17 +19,8 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToMany
-    @JoinTable (name="client_address",
-            joinColumns=@JoinColumn (name="address_id"),
-            inverseJoinColumns=@JoinColumn(name="client_id"))
-    private List<Client> clients;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private City city;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Region region;
+    @ManyToOne(optional = false)
+    private Client client;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private District district;
