@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.catalog.Client;
-import uz.crm.system.entity.catalog.Personal;
 import uz.crm.system.entity.template.AbEntity;
 
 import javax.persistence.*;

@@ -28,6 +28,12 @@ public class User extends AbsEntity implements UserDetails {
     @Column(nullable = false)
     private String password;
 
+    @ManyToOne
+    private Post post;
+
+    @Column(nullable = false, length = 4)
+    private Integer pinCode;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_role", joinColumns = {
             @JoinColumn(name = "user_id")},
