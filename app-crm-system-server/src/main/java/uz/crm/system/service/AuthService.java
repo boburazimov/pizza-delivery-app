@@ -16,22 +16,22 @@ public class AuthService implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
 
-    public ApiResponse register(ReqRegister request) {
-        if (request.getPassword().equals(request.getPrePassword())
-                && !request.getPhoneNumber().isEmpty()
-        ) {
-            boolean exist = userRepository.existsByPhoneNumber(request.getPhoneNumber());
-            if (!exist) {
-
-                User user = new User(
-                        request.getFirstName(),
-                        request.getLastName(),
-                        request.
-                        );
-
-            }
-        }
-    }
+//    public ApiResponse register(ReqRegister request) {
+//        if (request.getPassword().equals(request.getPrePassword())
+//                && !request.getPhoneNumber().isEmpty()
+//        ) {
+//            boolean exist = userRepository.existsByPhoneNumber(request.getPhoneNumber());
+//            if (!exist) {
+//
+//                User user = new User(
+//                        request.getFirstName(),
+//                        request.getLastName(),
+//                        request.
+//                        );
+//
+//            }
+//        }
+//    }
 
 
     @Override
