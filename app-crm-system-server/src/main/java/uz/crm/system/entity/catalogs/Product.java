@@ -1,4 +1,4 @@
-package uz.crm.system.entity.catalog;
+package uz.crm.system.entity.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,10 +8,7 @@ import uz.crm.system.entity.documents.PriceTableRow;
 import uz.crm.system.entity.template.AbsEntity;
 import uz.crm.system.entity.template.Attachment;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -20,6 +17,9 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class Product extends AbsEntity {
+
+    @Column(nullable = false)
+    private String name;
 
     @ManyToOne
     private Category category;

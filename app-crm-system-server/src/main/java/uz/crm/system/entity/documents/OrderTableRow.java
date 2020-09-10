@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.catalog.Product;
+import uz.crm.system.entity.catalogs.Product;
 import uz.crm.system.entity.template.AbEntity;
 
 import javax.persistence.Column;

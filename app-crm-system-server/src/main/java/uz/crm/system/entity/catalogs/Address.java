@@ -1,11 +1,10 @@
-package uz.crm.system.entity.catalog;
+package uz.crm.system.entity.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 /** Для хранение адреса клиентов и доставки **/
 

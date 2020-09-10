@@ -1,4 +1,4 @@
-package uz.crm.system.entity.catalog;
+package uz.crm.system.entity.catalogs;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

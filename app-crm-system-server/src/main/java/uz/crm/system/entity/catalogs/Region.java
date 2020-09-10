@@ -1,5 +1,4 @@
-package uz.crm.system.entity.catalog;
-
+package uz.crm.system.entity.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,17 +7,17 @@ import lombok.NoArgsConstructor;
 import uz.crm.system.entity.template.AbsIdEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
-/** Головное предприятие в случии если будут дочерные или же сетевые ресораны **/
+/** Регионы внутри города (Ташкент, Чикчик...) **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Company extends AbsIdEntity {
+public class Region extends AbsIdEntity {
 
-    private String address;
-
-    private String extraInfo;
+    @ManyToOne
+    private City city;
 }

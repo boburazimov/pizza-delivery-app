@@ -1,4 +1,4 @@
-package uz.crm.system.entity.catalog;
+package uz.crm.system.entity.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +18,12 @@ import java.util.List;
 @NoArgsConstructor
 @Entity(name = "users")
 public class User extends AbsEntity implements UserDetails {
+
+    @Column(nullable = false)
+    private String firstName;
+
+    @Column(nullable = false)
+    private String lastName;
 
     @ManyToOne(optional = false)
     private Restorant restorant;

@@ -3,9 +3,8 @@ package uz.crm.system.entity.documents;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.catalog.PriceType;
-import uz.crm.system.entity.catalog.Product;
-import uz.crm.system.entity.documents.SetPriceDoc;
+import uz.crm.system.entity.catalogs.PriceType;
+import uz.crm.system.entity.catalogs.Product;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package uz.crm.system.entity.catalog;
+package uz.crm.system.entity.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import uz.crm.system.entity.enums.StatusEnum;
 import uz.crm.system.entity.template.AbsEntity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -19,6 +20,9 @@ import javax.persistence.Enumerated;
 @NoArgsConstructor
 @Entity
 public class Post extends AbsEntity {
+
+    @Column(nullable = false)
+    private String name;
 
     @Enumerated(value = EnumType.STRING)
     private StatusEnum status;

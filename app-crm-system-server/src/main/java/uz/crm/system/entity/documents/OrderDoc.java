@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.catalog.Payment;
-import uz.crm.system.entity.catalog.Restorant;
-import uz.crm.system.entity.catalog.User;
+import uz.crm.system.entity.catalogs.Payment;
+import uz.crm.system.entity.catalogs.Restorant;
+import uz.crm.system.entity.catalogs.User;
 import uz.crm.system.entity.template.AbEntity;
 
 import javax.persistence.Column;

@@ -1,4 +1,4 @@
-package uz.crm.system.entity.catalog;
+package uz.crm.system.entity.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import uz.crm.system.entity.documents.BasketDoc;
 import uz.crm.system.entity.enums.GenderEnum;
 import uz.crm.system.entity.template.AbEntity;
-import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
 import java.util.Date;
