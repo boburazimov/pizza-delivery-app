@@ -29,6 +29,8 @@ public class OrderDoc extends AbEntity {
     @Column(nullable = false)
     private Date orderDate;
 
+    private Date onTime;
+
     @ManyToOne(optional = false)
     private User user;
 

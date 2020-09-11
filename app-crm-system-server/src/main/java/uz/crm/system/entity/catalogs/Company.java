@@ -5,18 +5,27 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.template.AbsIdEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-/** Головное предприятие в случии если будут дочерные или же сетевые ресораны **/
+/**
+ * Головное предприятие в случии если будут дочерные или же сетевые ресораны
+ **/
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Company extends AbsIdEntity {
+public class Company {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String name;
 
     private String address;
 

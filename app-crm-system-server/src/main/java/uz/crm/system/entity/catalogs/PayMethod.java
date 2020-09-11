@@ -6,7 +6,9 @@ import uz.crm.system.entity.template.AbsIdEntity;
 
 import javax.persistence.Entity;
 
-/** Для методов оплаты по безналичнаму расчету (PeyMe, PayPall, Click...) **/
+/**
+ * Для методов оплаты по безналичнаму расчету (PeyMe, PayPall, Click...)
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data

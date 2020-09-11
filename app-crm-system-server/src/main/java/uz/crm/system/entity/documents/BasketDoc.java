@@ -25,9 +25,6 @@ public class BasketDoc extends AbEntity {
     @ManyToOne(optional = false)
     private Client client;
 
-    @ManyToOne(optional = false)
-    private Personal personal;
-
     @OneToMany(mappedBy = "basketDoc", cascade = CascadeType.ALL)
     private List<BasketTableRow> tableRows;
 

@@ -21,6 +21,8 @@ public class Product extends AbsEntity {
     @Column(nullable = false)
     private String name;
 
+    private Double size;
+
     @ManyToOne
     private Category category;
 
