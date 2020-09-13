@@ -5,21 +5,23 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.catalogs.Product;
-import uz.crm.system.entity.template.AbEntity;
+import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
-/** Табличная часть документа Заказ **/
+/**
+ * Табличная часть документа Заказ
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class OrderTableRow extends AbEntity {
+public class OrderTableRow extends AbsEntity {
 
     @ManyToOne(optional = false)
     private OrderDoc orderDoc;

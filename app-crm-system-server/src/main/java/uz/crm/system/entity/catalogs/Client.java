@@ -6,22 +6,24 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.documents.BasketDoc;
 import uz.crm.system.entity.enums.GenderEnum;
-import uz.crm.system.entity.template.AbEntity;
+import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-/** Клиентская база **/
+/**
+ * Клиентская база
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Client extends AbEntity {
+public class Client extends AbsEntity {
 
-    @Column(nullable = false, length = 32)
+    @Column(length = 32)
     private String fullName;
 
     @Enumerated(value = EnumType.STRING)
@@ -34,12 +36,6 @@ public class Client extends AbEntity {
 
     @Column(nullable = false, unique = true, length = 13)
     private String phoneNumber;
-
-    @Column(unique = true)
-    private String email;
-
-//    @OneToMany(cascade = CascadeType.ALL)
-//    private List<Address> addresses;
 
     private String extraInfo;
 

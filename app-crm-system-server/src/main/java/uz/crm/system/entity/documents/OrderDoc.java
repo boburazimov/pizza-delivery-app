@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import uz.crm.system.entity.catalogs.Payment;
 import uz.crm.system.entity.catalogs.Restaurant;
 import uz.crm.system.entity.catalogs.User;
-import uz.crm.system.entity.template.AbEntity;
+import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +21,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class OrderDoc extends AbEntity {
+public class OrderDoc extends AbsEntity {
 
     @Column(unique = true)
     private String code;

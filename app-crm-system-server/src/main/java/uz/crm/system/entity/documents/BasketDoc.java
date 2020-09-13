@@ -5,19 +5,21 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.catalogs.Client;
-import uz.crm.system.entity.template.AbEntity;
+import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
 import java.util.List;
 
-/** Корзина для клиентов (в телеграме) **/
+/**
+ * Корзина для клиентов (в телеграме)
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class BasketDoc extends AbEntity {
+public class BasketDoc extends AbsEntity {
 
     @Column(nullable = false)
     private String code;

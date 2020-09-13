@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.documents.OrderDoc;
 import uz.crm.system.entity.enums.PayTypeEnum;
-import uz.crm.system.entity.template.AbEntity;
+import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Payment extends AbEntity {
+public class Payment extends AbsEntity {
 
     @Column(unique = true)
     private String code;
