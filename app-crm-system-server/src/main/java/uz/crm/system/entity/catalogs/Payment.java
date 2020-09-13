@@ -30,7 +30,7 @@ public class Payment extends AbEntity {
     private Double paySum;
 
     @ManyToOne(optional = false)
-    private Restorant restorant;
+    private Restaurant restaurant;
 
     @Enumerated(EnumType.STRING)
     private PayTypeEnum payTypeEnum;

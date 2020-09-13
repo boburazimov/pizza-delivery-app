@@ -26,7 +26,7 @@ public class User extends AbsEntity implements UserDetails {
     private String lastName;
 
     @ManyToOne(optional = false)
-    private Restorant restorant;
+    private Restaurant restaurant;
 
     @Column(nullable = false, unique = true, length = 13)
     private String phoneNumber;

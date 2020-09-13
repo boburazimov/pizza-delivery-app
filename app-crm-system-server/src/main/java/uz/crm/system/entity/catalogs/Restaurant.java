@@ -15,7 +15,10 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Restorant extends AbsEntity {
+public class Restaurant extends AbsEntity {
+
+    @Column(nullable = false)
+    private String interCode;
 
     @Column(nullable = false)
     private String name;
@@ -23,7 +26,7 @@ public class Restorant extends AbsEntity {
     @ManyToOne(optional = false)
     private Company company;
 
-    private String adress;
+    private String address;
 
     @ManyToOne(optional = false)
     private Currency currency;

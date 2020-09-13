@@ -12,7 +12,9 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
-/** Должности для разграничение доступов в ресусрам **/
+/**
+ * Должности для разграничение доступов к ресусрам
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data

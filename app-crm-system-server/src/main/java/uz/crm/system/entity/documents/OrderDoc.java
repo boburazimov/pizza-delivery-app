@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.catalogs.Payment;
-import uz.crm.system.entity.catalogs.Restorant;
+import uz.crm.system.entity.catalogs.Restaurant;
 import uz.crm.system.entity.catalogs.User;
 import uz.crm.system.entity.template.AbEntity;
 
@@ -35,7 +35,7 @@ public class OrderDoc extends AbEntity {
     private User user;
 
     @ManyToOne(optional = false)
-    private Restorant restorant;
+    private Restaurant restaurant;
 
     @OneToMany(mappedBy = "orderDoc")
     private List<OrderTableRow> orderTableRows;

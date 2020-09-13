@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
-import uz.pdp.onlineshop.service.AuthService;
+import uz.crm.system.service.AuthService;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
