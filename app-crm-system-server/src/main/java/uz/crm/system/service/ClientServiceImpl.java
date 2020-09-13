@@ -3,7 +3,6 @@ package uz.crm.system.service;
 import org.springframework.stereotype.Service;
 import uz.crm.system.entity.catalogs.Client;
 import uz.crm.system.entity.catalogs.User;
-import uz.crm.system.exception.BadRequestException;
 import uz.crm.system.payload.ApiResponse;
 import uz.crm.system.payload.ReqClient;
 import uz.crm.system.payload.ResClient;
