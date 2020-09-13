@@ -6,7 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.documents.PriceTableRow;
 import uz.crm.system.entity.template.AbsEntity;
-import uz.crm.system.entity.template.Attachment;
 
 import javax.persistence.*;
 import java.util.List;

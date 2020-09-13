@@ -1,9 +1,10 @@
-package uz.crm.system.entity.template;
+package uz.crm.system.entity.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

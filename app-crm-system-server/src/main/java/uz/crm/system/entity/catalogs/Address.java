@@ -2,21 +2,20 @@ package uz.crm.system.entity.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
 
 /** Для хранение адреса клиентов и доставки **/
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Address {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Address extends AbsEntity {
 
     @ManyToOne(optional = false)
     private Client client;
@@ -28,7 +27,7 @@ public class Address {
 
     private String extraAddress;
 
-    private Long North;
+    private Long Latitude;
 
-    private Long West;
+    private Long Longitude;
 }

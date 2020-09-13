@@ -9,6 +9,7 @@ import uz.crm.system.entity.enums.GenderEnum;
 import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
+import javax.tools.StandardLocation;
 import java.util.Date;
 import java.util.List;
 
