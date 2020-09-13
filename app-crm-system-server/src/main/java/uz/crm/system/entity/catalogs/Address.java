@@ -27,7 +27,7 @@ public class Address extends AbsEntity {
 
     private String extraAddress;
 
-    private Long Latitude;
+    private Double Latitude;
 
-    private Long Longitude;
+    private Double Longitude;
 }
