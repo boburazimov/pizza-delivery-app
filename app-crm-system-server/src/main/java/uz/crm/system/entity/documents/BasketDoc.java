@@ -24,10 +24,10 @@ public class BasketDoc extends AbsEntity {
     @Column(nullable = false)
     private String code;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Client client;
 
-    @OneToMany(mappedBy = "basketDoc", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "basketDoc", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<BasketTableRow> tableRows;
 
     private Double totalSummary;

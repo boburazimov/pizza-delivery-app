@@ -9,7 +9,6 @@ import uz.crm.system.entity.enums.GenderEnum;
 import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
-import javax.tools.StandardLocation;
 import java.util.Date;
 import java.util.List;
 
@@ -40,6 +39,6 @@ public class Client extends AbsEntity {
 
     private String extraInfo;
 
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<BasketDoc> basketDocs;
 }

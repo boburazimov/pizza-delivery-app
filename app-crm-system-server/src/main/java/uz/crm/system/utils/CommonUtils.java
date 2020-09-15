@@ -3,6 +3,7 @@ package uz.crm.system.utils;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import uz.crm.system.entity.catalogs.Category;
 import uz.crm.system.exception.BadRequestException;
 
 import java.util.Arrays;
@@ -77,5 +78,19 @@ public class CommonUtils {
             return "AA-000001";
         }
 
+    }
+
+    // СОБИРАЕТ ВСЕ ПОД КАТЕГОРИИ ДО САМОГО НАЧАЛО В ОНДУ СТРОКУ
+    public String getCategoryToFinish(Category category) {
+        StringBuilder categoryName = new StringBuilder(category.getName());
+        boolean finish = true;
+        while (finish) {
+            if (category.getParent() != null) {
+                categoryName.insert(0, category.getParent().getName() + ",");
+            } else {
+                finish = false;
+            }
+        }
+        return categoryName.toString();
     }
 }

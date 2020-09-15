@@ -41,8 +41,9 @@ public class ClientController {
 
     @GetMapping
     public HttpEntity<?> getClients(@RequestParam(value = "page", defaultValue = AppConstants.DEFAULT_PAGE) int page,
-                                    @RequestParam(value = "size", defaultValue = AppConstants.DEFAULT_SIZE) int size) throws BadRequestException {
-        return ResponseEntity.ok(clientService.getClients(page, size));
+                                    @RequestParam(value = "size", defaultValue = AppConstants.DEFAULT_SIZE) int size,
+                                    @RequestParam(value = "sort", defaultValue = "false") boolean sort) throws BadRequestException {
+        return ResponseEntity.ok(clientService.getClients(page, size, sort));
     }
 
     @DeleteMapping("/{id}")

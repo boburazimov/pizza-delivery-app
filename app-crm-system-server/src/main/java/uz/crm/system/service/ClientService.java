@@ -16,7 +16,7 @@ public interface ClientService {
 
     ResClient getClient(Client client);
 
-    ResPageable getClients(int page, int size) throws BadRequestException;
+    ResPageable getClients(int page, int size, boolean sort) throws BadRequestException;
 
     ApiResponse deleteClient(UUID id);
 }
