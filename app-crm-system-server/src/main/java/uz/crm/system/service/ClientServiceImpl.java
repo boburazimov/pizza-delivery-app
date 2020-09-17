@@ -88,7 +88,7 @@ public class ClientServiceImpl implements ClientService {
             clientRepository.deleteById(id);
             return new ApiResponse("Объект удален!", true);
         } catch (Exception e) {
-            return new ApiResponse("Ошибка при удалении!", false);
+            return new ApiResponse(e.getMessage(), false);
         }
     }
 }

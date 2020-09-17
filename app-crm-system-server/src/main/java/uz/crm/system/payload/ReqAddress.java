@@ -21,7 +21,7 @@ public class ReqAddress {
 
     private String extraAddress;
 
-    private Long North;
+    private Double Latitude;
 
-    private Long West;
+    private Double Longitude;
 }

@@ -15,13 +15,17 @@ public class ResAddress {
 
     private UUID clientId;
 
+    private String clientName;
+
     private Integer districtId;
+
+    private String districtName;
 
     private String StreetHome;
 
     private String extraAddress;
 
-    private Long North;
+    private Double Latitude;
 
-    private Long West;
+    private Double Longitude;
 }
