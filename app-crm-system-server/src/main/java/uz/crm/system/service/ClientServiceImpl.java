@@ -84,7 +84,7 @@ public class ClientServiceImpl implements ClientService {
             Client client = clientRepository.findById(id)
                     .orElseThrow(() -> new ResourceNotFoundException("getClient"));
             // need logic code for cleaning BasketDoc from Client
-            client.setBasketDocs(null);
+            client.setCarts(null);
             clientRepository.deleteById(id);
             return new ApiResponse("Объект удален!", true);
         } catch (Exception e) {

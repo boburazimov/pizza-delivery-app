@@ -1,17 +1,17 @@
 package uz.crm.system.payload;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import uz.crm.system.entity.catalogs.Post;
-import uz.crm.system.entity.catalogs.Restaurant;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ReqRegister {
 
-    private String firstName;
-
-    private String lastName;
+    private String fullName;
 
     private UUID restaurantId;
 

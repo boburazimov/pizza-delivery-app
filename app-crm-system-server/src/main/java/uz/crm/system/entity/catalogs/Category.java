@@ -16,4 +16,6 @@ public class Category extends AbsIdEntity {
 
     @ManyToOne
     private Category parent;
+
+    private Boolean topCategory;
 }

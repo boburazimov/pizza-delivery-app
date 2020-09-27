@@ -18,7 +18,7 @@ import javax.persistence.ManyToOne;
 public class Restaurant extends AbsEntity {
 
     @Column(nullable = false)
-    private String interCode;
+    private String code;
 
     @Column(nullable = false)
     private String name;
@@ -30,4 +30,6 @@ public class Restaurant extends AbsEntity {
 
     @ManyToOne(optional = false)
     private Currency currency;
+
+    private String extraInfo;
 }

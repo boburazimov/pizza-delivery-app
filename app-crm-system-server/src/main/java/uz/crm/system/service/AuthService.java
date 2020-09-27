@@ -41,8 +41,7 @@ public class AuthService implements UserDetailsService {
             if (!exist) {
 
                 User user = new User();
-                user.setFirstName(request.getFirstName());
-                user.setLastName(request.getLastName());
+                user.setFullName(request.getFullName());
                 user.setRestaurant(restaurantRepository.findById(request.getRestaurantId())
                         .orElseThrow(() -> new ResourceNotFoundException("getRestaurantId")));
                 user.setPhoneNumber(request.getPhoneNumber());
@@ -65,7 +64,7 @@ public class AuthService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("phoneNumber"));
     }
 
-    public User loadUserById(UUID id){
+    public User loadUserById(UUID id) {
         return userRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("Id"));
     }
 }

@@ -25,6 +25,8 @@ public class Product extends AbsEntity {
     @ManyToOne
     private Category category;
 
+    private Boolean top;
+
     private String barcode;
 
     private String article;
@@ -37,6 +39,4 @@ public class Product extends AbsEntity {
 
     @OneToMany(mappedBy = "product")
     private List<PriceTableRow> priceTableRows;
-
-
 }

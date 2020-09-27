@@ -21,10 +21,10 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class BasketTableRow extends AbsEntity {
+public class CartTableRow extends AbsEntity {
 
     @ManyToOne(optional = false)
-    private BasketDoc basketDoc;
+    private Cart cart;
 
     @ManyToOne(optional = false)
     private Product product;

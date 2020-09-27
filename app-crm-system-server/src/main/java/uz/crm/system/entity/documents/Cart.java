@@ -19,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class BasketDoc extends AbsEntity {
+public class Cart extends AbsEntity {
 
     @Column(nullable = false)
     private String code;
@@ -27,8 +27,8 @@ public class BasketDoc extends AbsEntity {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Client client;
 
-    @OneToMany(mappedBy = "basketDoc", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<BasketTableRow> tableRows;
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<CartTableRow> tableRows;
 
     private Double totalSummary;
 

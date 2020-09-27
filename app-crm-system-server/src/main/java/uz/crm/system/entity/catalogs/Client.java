@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.documents.BasketDoc;
+import uz.crm.system.entity.documents.Cart;
 import uz.crm.system.entity.enums.GenderEnum;
 import uz.crm.system.entity.template.AbsEntity;
 
@@ -40,5 +40,5 @@ public class Client extends AbsEntity {
     private String extraInfo;
 
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<BasketDoc> basketDocs;
+    private List<Cart> carts;
 }

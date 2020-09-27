@@ -20,10 +20,7 @@ import java.util.List;
 public class User extends AbsEntity implements UserDetails {
 
     @Column(nullable = false)
-    private String firstName;
-
-    @Column(nullable = false)
-    private String lastName;
+    private String fullName;
 
     @ManyToOne(optional = false)
     private Restaurant restaurant;

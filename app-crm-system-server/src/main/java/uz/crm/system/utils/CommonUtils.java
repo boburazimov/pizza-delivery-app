@@ -80,7 +80,7 @@ public class CommonUtils {
 
     }
 
-    // СОБИРАЕТ ВСЕ ПОД КАТЕГОРИИ ДО САМОГО НАЧАЛО В ОНДУ СТРОКУ
+    // GET CATEGORIES TILL THE LAST PARENT
     public String getCategoryToFinish(Category category) {
         StringBuilder categoryName = new StringBuilder(category.getName());
         boolean finish = true;

@@ -16,18 +16,14 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+
 public class Payment extends AbsEntity {
 
     @Column(unique = true)
     private String code;
 
     @Column(nullable = false)
-    private Timestamp payDate;
-
-    private String ownerCard;
-
-    @Column(nullable = false)
-    private Double paySum;
+    private Double sum;
 
     @ManyToOne(optional = false)
     private Restaurant restaurant;
@@ -38,8 +34,7 @@ public class Payment extends AbsEntity {
     @ManyToOne
     private User user;
 
-    @ManyToOne(optional = false)
-    private Client client;
+    private String TerminalNumber;
 
     private String clientCard;
 
