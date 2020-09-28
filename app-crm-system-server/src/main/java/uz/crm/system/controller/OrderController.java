@@ -28,27 +28,27 @@ public class OrderController {
     OrderRepository orderRepository;
 
     @PostMapping
-    public HttpEntity<?> addOrderDoc(@RequestBody ReqOrder request, @CurrentUser User user) {
-        ApiResponse response = orderService.addOrderDoc(request, user);
+    public HttpEntity<?> addOrder(@RequestBody ReqOrder request, @CurrentUser User user) {
+        ApiResponse response = orderService.addOrder(request, user);
         return ResponseEntity.status(response.isSuccess() ? HttpStatus.CREATED : HttpStatus.CONFLICT).body(response);
     }
 
     @GetMapping("/{id}")
-    public HttpEntity<?> getOrderDoc(@PathVariable UUID id) {
-        Order order = orderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("getOrderDoc"));
-        return ResponseEntity.ok(orderService.getOrderDoc(order));
+    public HttpEntity<?> getOrder(@PathVariable UUID id) {
+        Order order = orderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("getOrder"));
+        return ResponseEntity.ok(orderService.getOrder(order));
     }
 
     @GetMapping
-    public HttpEntity<?> getOrderDocs(@RequestParam(value = "page", defaultValue = AppConstants.DEFAULT_PAGE) int page,
+    public HttpEntity<?> getOrders(@RequestParam(value = "page", defaultValue = AppConstants.DEFAULT_PAGE) int page,
                                       @RequestParam(value = "size", defaultValue = AppConstants.DEFAULT_SIZE) int size,
                                       @RequestParam(value = "sort", defaultValue = "false") boolean sort) throws BadRequestException {
-        return ResponseEntity.ok(orderService.getOrderDocs(page, size, sort));
+        return ResponseEntity.ok(orderService.getOrders(page, size, sort));
     }
 
     @DeleteMapping("/{id}")
-    public HttpEntity<?> deleteOrderDoc(@PathVariable UUID id) {
-        ApiResponse response = orderService.deleteOrderDoc(id);
+    public HttpEntity<?> deleteOrder(@PathVariable UUID id) {
+        ApiResponse response = orderService.deleteOrder(id);
         return ResponseEntity.status(response.isSuccess() ? HttpStatus.ACCEPTED : HttpStatus.CONFLICT).body(response);
     }
 }

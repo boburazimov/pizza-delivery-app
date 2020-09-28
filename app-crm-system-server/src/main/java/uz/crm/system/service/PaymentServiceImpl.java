@@ -35,7 +35,7 @@ public class PaymentServiceImpl implements PaymentService {
             payment.setUser(user);
             payment.setTerminalNumber(request.getTerminalNumber());
             payment.setClientCard(request.getClientCard());
-            payment.setOrder(null); //Fill content after CRUD OrderDoc Entity
+            payment.setOrder(null); //Fill content after CRUD Order Entity
             payment.setExtraInfo(request.getExtraInfo());
             paymentRepository.save(payment);
             return new ApiResponse(request.getId() == null ? "Оплата сохранен!" : "Оплата изменен!", true);

@@ -15,22 +15,22 @@ import java.util.UUID;
 public class OrderServiceImpl implements OrderService {
 
     @Override
-    public ApiResponse addOrderDoc(ReqOrder request, User user) {
+    public ApiResponse addOrder(ReqOrder request, User user) {
         return null;
     }
 
     @Override
-    public ResOrder getOrderDoc(Order order) {
+    public ResOrder getOrder(Order order) {
         return null;
     }
 
     @Override
-    public ResPageable getOrderDocs(int page, int size, boolean sort) throws BadRequestException {
+    public ResPageable getOrders(int page, int size, boolean sort) throws BadRequestException {
         return null;
     }
 
     @Override
-    public ApiResponse deleteOrderDoc(UUID id) {
+    public ApiResponse deleteOrder(UUID id) {
         return null;
     }
 }

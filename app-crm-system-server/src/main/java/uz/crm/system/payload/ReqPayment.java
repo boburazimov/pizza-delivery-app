@@ -26,7 +26,7 @@ public class ReqPayment {
 
     private String clientCard;
 
-    private UUID orderDocId;
+    private UUID orderId;
 
     private String extraInfo;
 }

@@ -12,11 +12,11 @@ import java.util.UUID;
 
 public interface OrderService {
 
-    ApiResponse addOrderDoc(ReqOrder request, User user);
+    ApiResponse addOrder(ReqOrder request, User user);
 
-    ResOrder getOrderDoc(Order order);
+    ResOrder getOrder(Order order);
 
-    ResPageable getOrderDocs(int page, int size, boolean sort) throws BadRequestException;
+    ResPageable getOrders(int page, int size, boolean sort) throws BadRequestException;
 
-    ApiResponse deleteOrderDoc(UUID id);
+    ApiResponse deleteOrder(UUID id);
 }

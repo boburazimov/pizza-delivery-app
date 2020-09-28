@@ -30,9 +30,9 @@ public class ResPayment {
 
     private String clientCard;
 
-    private UUID orderDocId;
+    private UUID orderId;
 
-    private String orderDocCode;
+    private String orderCode;
 
     private String extraInfo;
 }
