@@ -2,6 +2,7 @@ package uz.crm.system.entity.documents;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
@@ -9,6 +10,7 @@ import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
+import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -18,11 +20,12 @@ import java.util.UUID;
 
 /** Табличная часть документа Установки цен **/
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class SetPriceDoc {
+public class Price extends AbsEntity {
 
     @Id
     @Type(type = "org.hibernate.type.PostgresUUIDType")
@@ -34,24 +37,10 @@ public class SetPriceDoc {
     private String code;
 
     @Column(nullable = false)
-    private Date setPriceDate;
+    private Date priceDate;
 
-    @OneToMany(mappedBy = "priceDoc")
-    private List<PriceTableRow> priceTableRows;
-
-    @CreationTimestamp
-    @Column(nullable = false, updatable = false)
-    private Timestamp createdAt;
-
-    @UpdateTimestamp
-    @Column(nullable = false)
-    private Timestamp updatedAt;
-
-    @CreatedBy
-    private UUID createdBy;
-
-    @LastModifiedBy
-    private UUID updatedBy;
+    @OneToMany(mappedBy = "price")
+    private List<PriceRow> priceRows;
 
     private String extraInfo;
 }

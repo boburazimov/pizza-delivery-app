@@ -7,48 +7,48 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uz.crm.system.entity.catalogs.User;
-import uz.crm.system.entity.documents.OrderDoc;
+import uz.crm.system.entity.documents.Order;
 import uz.crm.system.exception.BadRequestException;
 import uz.crm.system.payload.ApiResponse;
-import uz.crm.system.payload.ReqOrderDoc;
-import uz.crm.system.repository.OrderDocRepository;
+import uz.crm.system.payload.ReqOrder;
+import uz.crm.system.repository.OrderRepository;
 import uz.crm.system.security.CurrentUser;
-import uz.crm.system.service.OrderDocService;
+import uz.crm.system.service.OrderService;
 import uz.crm.system.utils.AppConstants;
 
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/order")
-public class OrderDocController {
+public class OrderController {
 
     @Autowired
-    OrderDocService orderDocService;
+    OrderService orderService;
     @Autowired
-    OrderDocRepository orderDocRepository;
+    OrderRepository orderRepository;
 
     @PostMapping
-    public HttpEntity<?> addOrderDoc(@RequestBody ReqOrderDoc request, @CurrentUser User user) {
-        ApiResponse response = orderDocService.addOrderDoc(request, user);
+    public HttpEntity<?> addOrderDoc(@RequestBody ReqOrder request, @CurrentUser User user) {
+        ApiResponse response = orderService.addOrderDoc(request, user);
         return ResponseEntity.status(response.isSuccess() ? HttpStatus.CREATED : HttpStatus.CONFLICT).body(response);
     }
 
     @GetMapping("/{id}")
     public HttpEntity<?> getOrderDoc(@PathVariable UUID id) {
-        OrderDoc orderDoc = orderDocRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("getOrderDoc"));
-        return ResponseEntity.ok(orderDocService.getOrderDoc(orderDoc));
+        Order order = orderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("getOrderDoc"));
+        return ResponseEntity.ok(orderService.getOrderDoc(order));
     }
 
     @GetMapping
     public HttpEntity<?> getOrderDocs(@RequestParam(value = "page", defaultValue = AppConstants.DEFAULT_PAGE) int page,
                                       @RequestParam(value = "size", defaultValue = AppConstants.DEFAULT_SIZE) int size,
                                       @RequestParam(value = "sort", defaultValue = "false") boolean sort) throws BadRequestException {
-        return ResponseEntity.ok(orderDocService.getOrderDocs(page, size, sort));
+        return ResponseEntity.ok(orderService.getOrderDocs(page, size, sort));
     }
 
     @DeleteMapping("/{id}")
     public HttpEntity<?> deleteOrderDoc(@PathVariable UUID id) {
-        ApiResponse response = orderDocService.deleteOrderDoc(id);
+        ApiResponse response = orderService.deleteOrderDoc(id);
         return ResponseEntity.status(response.isSuccess() ? HttpStatus.ACCEPTED : HttpStatus.CONFLICT).body(response);
     }
 }

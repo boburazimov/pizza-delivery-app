@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import uz.crm.system.entity.enums.UserStatusEnum;
 import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
@@ -33,6 +34,9 @@ public class User extends AbsEntity implements UserDetails {
 
     @ManyToOne
     private Post post;
+
+    @Enumerated(value = EnumType.STRING)
+    private UserStatusEnum status;
 
     @Column(nullable = false, length = 4)
     private Integer pinCode;

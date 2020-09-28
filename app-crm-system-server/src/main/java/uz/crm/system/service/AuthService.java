@@ -9,6 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import uz.crm.system.entity.catalogs.User;
 import uz.crm.system.entity.enums.RoleNameEnum;
+import uz.crm.system.entity.enums.UserStatusEnum;
 import uz.crm.system.payload.ApiResponse;
 import uz.crm.system.payload.ReqRegister;
 import uz.crm.system.repository.UserRepository;
@@ -34,6 +35,7 @@ public class AuthService implements UserDetailsService {
     RoleRepository roleRepository;
 
     public ApiResponse register(ReqRegister request) {
+
         if (request.getPassword().equals(request.getPrePassword())
                 && !request.getPhoneNumber().isEmpty()
         ) {
@@ -48,6 +50,7 @@ public class AuthService implements UserDetailsService {
                 user.setPassword(passwordEncoder.encode(request.getPassword()));
                 user.setPost(postRepository.findById(request.getPostId())
                         .orElseThrow(() -> new ResourceNotFoundException("getPostId")));
+                user.setStatus(UserStatusEnum.ACTIVE);
                 user.setPinCode(request.getPinCode());
                 user.setRoles(Collections.singletonList(roleRepository.findByName(RoleNameEnum.ROLE_USER)));
                 userRepository.save(user);

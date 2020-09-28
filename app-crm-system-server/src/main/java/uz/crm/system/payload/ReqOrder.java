@@ -11,7 +11,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReqOrderDoc {
+public class ReqOrder {
 
     private UUID id;
 

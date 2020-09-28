@@ -3,9 +3,6 @@ package uz.crm.system.payload;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.catalogs.Restaurant;
-import uz.crm.system.entity.catalogs.User;
-import uz.crm.system.entity.documents.OrderDoc;
 import uz.crm.system.entity.enums.PayTypeEnum;
 
 import java.util.UUID;

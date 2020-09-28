@@ -28,7 +28,7 @@ public class Cart extends AbsEntity {
     private Client client;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<CartTableRow> tableRows;
+    private List<CartItem> tableRows;
 
     private Double totalSummary;
 

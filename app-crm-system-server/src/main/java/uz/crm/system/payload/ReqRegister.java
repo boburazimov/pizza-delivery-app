@@ -11,6 +11,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public class ReqRegister {
 
+    private UUID id;
+
     private String fullName;
 
     private UUID restaurantId;
@@ -19,6 +21,7 @@ public class ReqRegister {
 
     private UUID postId;
 
+//    @Pattern (regexp = "[a-zA-Z0-9]{6,30}", message = "Длина пароля не должен быть меньше 6 знаков!")
     private String password;
 
     private String prePassword;

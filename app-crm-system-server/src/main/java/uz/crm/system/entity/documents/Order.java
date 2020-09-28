@@ -7,12 +7,11 @@ import lombok.NoArgsConstructor;
 import uz.crm.system.entity.catalogs.Payment;
 import uz.crm.system.entity.catalogs.Restaurant;
 import uz.crm.system.entity.catalogs.User;
+import uz.crm.system.entity.enums.OrderStatusEnum;
+import uz.crm.system.entity.enums.OrderTypeEnum;
 import uz.crm.system.entity.template.AbsEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -21,13 +20,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class OrderDoc extends AbsEntity {
+public class Order extends AbsEntity {
 
     @Column(unique = true)
     private String code;
 
-    @Column(nullable = false)
-    private Date orderDate;
+    @Enumerated(value = EnumType.STRING)
+    private OrderTypeEnum orderTypeEnum;
+
+    @Enumerated(value = EnumType.STRING)
+    private OrderStatusEnum orderStatusEnum;
 
     private Date onTime;
 
@@ -37,9 +39,9 @@ public class OrderDoc extends AbsEntity {
     @ManyToOne(optional = false)
     private Restaurant restaurant;
 
-    @OneToMany(mappedBy = "orderDoc")
-    private List<OrderTableRow> orderTableRows;
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems;
 
-    @OneToMany(mappedBy = "orderDoc")
+    @OneToMany(mappedBy = "order")
     private List<Payment> payments;
 }

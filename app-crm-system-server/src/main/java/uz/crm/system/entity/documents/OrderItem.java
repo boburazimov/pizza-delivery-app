@@ -21,10 +21,10 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class OrderTableRow extends AbsEntity {
+public class OrderItem extends AbsEntity {
 
     @ManyToOne(optional = false)
-    private OrderDoc orderDoc;
+    private Order order;
 
     @ManyToOne(optional = false)
     private Product product;
@@ -33,7 +33,7 @@ public class OrderTableRow extends AbsEntity {
     private Double amount;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private PriceTableRow priceTableRow;
+    private PriceRow priceRow;
 
     private Double summary;
 }

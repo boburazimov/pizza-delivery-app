@@ -21,7 +21,7 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class CartTableRow extends AbsEntity {
+public class CartItem extends AbsEntity {
 
     @ManyToOne(optional = false)
     private Cart cart;
@@ -33,7 +33,7 @@ public class CartTableRow extends AbsEntity {
     private Double amount;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private PriceTableRow priceTableRow;
+    private PriceRow priceRow;
 
     private Double summary;
 }

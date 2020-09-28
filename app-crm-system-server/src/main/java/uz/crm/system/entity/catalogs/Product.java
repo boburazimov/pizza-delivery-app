@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.documents.PriceTableRow;
+import uz.crm.system.entity.documents.PriceRow;
 import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
@@ -38,5 +38,5 @@ public class Product extends AbsEntity {
     private Unit unit;
 
     @OneToMany(mappedBy = "product")
-    private List<PriceTableRow> priceTableRows;
+    private List<PriceRow> priceRows;
 }

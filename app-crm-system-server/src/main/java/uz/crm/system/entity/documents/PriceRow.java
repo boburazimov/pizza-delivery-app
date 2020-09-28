@@ -8,20 +8,22 @@ import uz.crm.system.entity.catalogs.Product;
 
 import javax.persistence.*;
 
-/** Табличная часть документа установки цен для продуктов (номенклатуры) **/
+/**
+ * Табличная часть документа установки цен для продуктов (номенклатуры)
+ */
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class PriceTableRow {
+public class PriceRow {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
-    private SetPriceDoc priceDoc;
+    private Price price;
 
     @ManyToOne(optional = false)
     private Product product;

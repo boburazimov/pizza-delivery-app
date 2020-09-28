@@ -2,7 +2,7 @@ package uz.crm.system.repository.rest.projection;
 
 import org.springframework.data.rest.core.config.Projection;
 import uz.crm.system.entity.catalogs.Post;
-import uz.crm.system.entity.enums.StatusEnum;
+import uz.crm.system.entity.enums.UserStatusEnum;
 
 import java.util.UUID;
 
@@ -13,5 +13,5 @@ public interface CustomPost {
 
     String getName();
 
-    StatusEnum getStatus();
+    UserStatusEnum getStatus();
 }

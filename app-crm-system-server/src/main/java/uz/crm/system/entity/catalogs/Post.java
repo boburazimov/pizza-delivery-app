@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.enums.StatusEnum;
+import uz.crm.system.entity.enums.UserStatusEnum;
 import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.Column;
@@ -25,7 +25,4 @@ public class Post extends AbsEntity {
 
     @Column(nullable = false)
     private String name;
-
-    @Enumerated(value = EnumType.STRING)
-    private StatusEnum status;
 }
