@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import uz.crm.system.entity.catalogs.Company;
 import uz.crm.system.repository.rest.projection.CustomCompany;
 
-import java.util.UUID;
-
 @CrossOrigin
 @RepositoryRestResource(path = "company", collectionResourceRel = "list", excerptProjection = CustomCompany.class)
 public interface CompanyRepository extends JpaRepository<Company, Integer> {

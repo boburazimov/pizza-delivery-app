@@ -13,7 +13,7 @@ public class ReqAddress {
 
     private UUID id;
 
-    private UUID clientId;
+    private UUID customerId;
 
     private Integer districtId;
 

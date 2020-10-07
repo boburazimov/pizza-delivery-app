@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import uz.crm.system.entity.catalogs.Client;
+import uz.crm.system.entity.catalogs.Customer;
 import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
@@ -24,10 +24,10 @@ public class Cart extends AbsEntity {
     @Column(nullable = false)
     private String code;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Client client;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Customer customer;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     private List<CartItem> tableRows;
 
     private Double totalSummary;

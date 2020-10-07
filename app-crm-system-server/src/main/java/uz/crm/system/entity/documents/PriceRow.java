@@ -2,25 +2,27 @@ package uz.crm.system.entity.documents;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.catalogs.PriceType;
 import uz.crm.system.entity.catalogs.Product;
+import uz.crm.system.entity.template.AbsEntity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 /**
  * Табличная часть документа установки цен для продуктов (номенклатуры)
  */
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class PriceRow {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class PriceRow extends AbsEntity {
 
     @ManyToOne
     private Price price;

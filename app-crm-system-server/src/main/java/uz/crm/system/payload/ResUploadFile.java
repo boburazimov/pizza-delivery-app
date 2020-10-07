@@ -12,8 +12,12 @@ import java.util.UUID;
 public class ResUploadFile {
 
     private UUID fileId;
+
     private String fileName;
+
     private String fileDownloadUri;
+
     private String fileType;
+
     private Long size;
 }

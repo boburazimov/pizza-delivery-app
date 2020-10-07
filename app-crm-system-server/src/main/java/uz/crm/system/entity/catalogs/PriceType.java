@@ -6,7 +6,9 @@ import uz.crm.system.entity.template.AbsIdEntity;
 
 import javax.persistence.Entity;
 
-/** Виды цен (Оптовая, Розницная...) **/
+/**
+ * Виды цен (Оптовая, Розницная...)
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data

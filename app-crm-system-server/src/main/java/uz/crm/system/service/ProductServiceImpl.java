@@ -7,7 +7,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import uz.crm.system.entity.catalogs.Attachment;
 import uz.crm.system.entity.catalogs.Product;
 import uz.crm.system.entity.catalogs.User;
@@ -20,6 +19,7 @@ import uz.crm.system.repository.AttachmentContentRepository;
 import uz.crm.system.repository.AttachmentRepository;
 import uz.crm.system.repository.ProductRepository;
 import uz.crm.system.repository.rest.CategoryRepository;
+import uz.crm.system.repository.rest.SizeRepository;
 import uz.crm.system.repository.rest.UnitRepository;
 import uz.crm.system.utils.CommonUtils;
 
@@ -39,6 +39,8 @@ public class ProductServiceImpl implements ProductService {
     UnitRepository unitRepository;
     @Autowired
     AttachmentContentRepository attachmentContentRepository;
+    @Autowired
+    SizeRepository sizeRepository;
 
     @Override
     public ApiResponse addProduct(ReqProduct request, User user) {
@@ -48,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
             if (request.getId() != null)
                 product = productRepository.findById(request.getId()).orElseThrow(() -> new ResourceNotFoundException("getProduct"));
             product.setName(request.getName());
-            product.setSize(request.getSize());
+            product.setSizes(null);
             product.setCategory(categoryRepository.findById(request.getCategoryId()).orElseThrow(() -> new ResourceNotFoundException("getCategory")));
             product.setTop(request.getTop());
             product.setBarcode(request.getBarcode());
@@ -65,24 +67,25 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ResProduct getProduct(Product product) {
 
-        return new ResProduct(
-                product.getId(),
-                product.getName(),
-                product.getSize(),
-                product.getCategory().getId(),
-                product.getCategory().getName(),
-                product.getTop(),
-                product.getBarcode(),
-                product.getArticle(),
-                ServletUriComponentsBuilder
-                        .fromCurrentContextPath()
-                        .path("/api/file/")
-                        .path(attachmentRepository.findById(product.getPhoto().getId())
-                                .orElseThrow(() -> new ResourceNotFoundException("getPhoto"))
-                                .getId().toString()).toUriString(),
-                product.getUnit().getId(),
-                product.getUnit().getName()
-        );
+//        return new ResProduct(
+//                product.getId(),
+//                product.getName(),
+//                product.getProductSizes(),
+//                product.getCategory().getId(),
+//                product.getCategory().getName(),
+//                product.getTop(),
+//                product.getBarcode(),
+//                product.getArticle(),
+//                ServletUriComponentsBuilder
+//                        .fromCurrentContextPath()
+//                        .path("/api/file/")
+//                        .path(attachmentRepository.findById(product.getPhoto().getId())
+//                                .orElseThrow(() -> new ResourceNotFoundException("getPhoto"))
+//                                .getId().toString()).toUriString(),
+//                product.getUnit().getId(),
+//                product.getUnit().getName()
+//        );
+        return null;
     }
 
     @Override

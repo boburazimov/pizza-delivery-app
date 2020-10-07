@@ -6,7 +6,9 @@ import uz.crm.system.entity.template.AbsIdEntity;
 
 import javax.persistence.Entity;
 
-/** Города Республики (Ташкент, Самарканд..) **/
+/**
+ * Города Республики (Ташкент, Самарканд..)
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data

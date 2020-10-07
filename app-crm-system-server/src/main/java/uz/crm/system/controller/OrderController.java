@@ -41,8 +41,8 @@ public class OrderController {
 
     @GetMapping
     public HttpEntity<?> getOrders(@RequestParam(value = "page", defaultValue = AppConstants.DEFAULT_PAGE) int page,
-                                      @RequestParam(value = "size", defaultValue = AppConstants.DEFAULT_SIZE) int size,
-                                      @RequestParam(value = "sort", defaultValue = "false") boolean sort) throws BadRequestException {
+                                   @RequestParam(value = "size", defaultValue = AppConstants.DEFAULT_SIZE) int size,
+                                   @RequestParam(value = "sort", defaultValue = "false") boolean sort) throws BadRequestException {
         return ResponseEntity.ok(orderService.getOrders(page, size, sort));
     }
 

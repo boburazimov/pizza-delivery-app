@@ -6,20 +6,28 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.template.AbsEntity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-
-/**
- * Должности для разграничение доступов к ресусрам
- **/
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import java.time.Duration;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Post extends AbsEntity {
+public class Recipe extends AbsEntity {
 
-    @Column(nullable = false)
     private String name;
+
+    @OneToOne
+    private Product endProduct;
+
+    private Double amount;
+
+    private Duration cookTime;
+
+    @OneToMany
+    private List<Product> ingredients;
 }

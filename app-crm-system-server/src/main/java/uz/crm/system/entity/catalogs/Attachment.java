@@ -9,7 +9,9 @@ import uz.crm.system.entity.template.AbsEntity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-/** Для хранение данных о файлах а именно тип файла и его размер, сам файл будет храниться в "AttachmentContent" **/
+/**
+ * Для хранение данных о файлах а именно тип файла и его размер, сам файл будет храниться в "AttachmentContent"
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data

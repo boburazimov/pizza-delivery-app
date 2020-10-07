@@ -13,9 +13,9 @@ public class ResAddress {
 
     private UUID id;
 
-    private UUID clientId;
+    private UUID customerId;
 
-    private String clientName;
+    private String customerName;
 
     private Integer districtId;
 

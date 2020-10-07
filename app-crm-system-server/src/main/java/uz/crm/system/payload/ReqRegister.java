@@ -21,7 +21,7 @@ public class ReqRegister {
 
     private UUID postId;
 
-//    @Pattern (regexp = "[a-zA-Z0-9]{6,30}", message = "Длина пароля не должен быть меньше 6 знаков!")
+    //    @Pattern (regexp = "[a-zA-Z0-9]{6,30}", message = "Длина пароля не должен быть меньше 6 знаков!")
     private String password;
 
     private String prePassword;

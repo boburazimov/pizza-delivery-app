@@ -20,8 +20,6 @@ public class Product extends AbsEntity {
     @Column(nullable = false)
     private String name;
 
-    private Double size;
-
     @ManyToOne
     private Category category;
 
@@ -36,6 +34,13 @@ public class Product extends AbsEntity {
 
     @ManyToOne
     private Unit unit;
+
+    @ManyToMany
+    @JoinTable(
+            name="product_size",
+            joinColumns=@JoinColumn(name="product_id", referencedColumnName="id"),
+            inverseJoinColumns=@JoinColumn(name="size_id", referencedColumnName="id"))
+    private List<Size> sizes;
 
     @OneToMany(mappedBy = "product")
     private List<PriceRow> priceRows;

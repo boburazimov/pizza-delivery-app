@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -15,7 +16,7 @@ public class ResProduct {
 
     private String name;
 
-    private Double size;
+    private List<UUID> sizesId;
 
     private Integer categoryId;
 

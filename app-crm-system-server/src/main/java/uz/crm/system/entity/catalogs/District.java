@@ -9,7 +9,9 @@ import uz.crm.system.entity.template.AbsIdEntity;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-/** Районы внутри города (Чиланзар, Хамза) **/
+/**
+ * Районы внутри города (Чиланзар, Хамза)
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -8,7 +8,7 @@ public interface CustomCurrency {
 
     Integer getId();
 
-    String getMainName();
+    String getName();
 
     String getSymbolCode();
 }

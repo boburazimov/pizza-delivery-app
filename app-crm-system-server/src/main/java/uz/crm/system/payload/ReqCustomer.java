@@ -11,7 +11,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ResClient {
+public class ReqCustomer {
 
     private UUID id;
 
@@ -22,8 +22,6 @@ public class ResClient {
     private Date birthDate;
 
     private Integer groupId;
-
-    private String groupName;
 
     private String phoneNumber;
 

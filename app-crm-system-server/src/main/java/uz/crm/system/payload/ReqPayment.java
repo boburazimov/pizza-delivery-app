@@ -24,7 +24,7 @@ public class ReqPayment {
 
     private String TerminalNumber;
 
-    private String clientCard;
+    private String customerCard;
 
     private UUID orderId;
 

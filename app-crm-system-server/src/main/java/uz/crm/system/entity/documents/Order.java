@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import uz.crm.system.entity.catalogs.Customer;
 import uz.crm.system.entity.catalogs.Payment;
 import uz.crm.system.entity.catalogs.Restaurant;
 import uz.crm.system.entity.catalogs.User;
@@ -19,7 +20,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(name = "orders")
 public class Order extends AbsEntity {
 
     @Column(unique = true)
@@ -36,10 +37,13 @@ public class Order extends AbsEntity {
     @ManyToOne(optional = false)
     private User user;
 
+    @ManyToOne
+    private Customer customer;
+
     @ManyToOne(optional = false)
     private Restaurant restaurant;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 
     @OneToMany(mappedBy = "order")

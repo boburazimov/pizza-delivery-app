@@ -34,9 +34,9 @@ public class Payment extends AbsEntity {
 
     private String TerminalNumber;
 
-    private String clientCard;
+    private String customerCard;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false)
     private Order order;
 
     private String extraInfo;

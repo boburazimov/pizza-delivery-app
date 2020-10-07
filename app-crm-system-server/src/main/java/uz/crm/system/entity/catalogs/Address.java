@@ -6,9 +6,13 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.template.AbsEntity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
-/** Для хранение адреса клиентов и доставки **/
+/**
+ * Для хранение адреса клиентов и доставки
+ **/
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -17,8 +21,8 @@ import javax.persistence.*;
 @Entity
 public class Address extends AbsEntity {
 
-    @ManyToOne(optional = false)
-    private Client client;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Customer customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private District district;

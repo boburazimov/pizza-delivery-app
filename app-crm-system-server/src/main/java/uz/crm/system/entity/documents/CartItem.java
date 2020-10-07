@@ -23,7 +23,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class CartItem extends AbsEntity {
 
-    @ManyToOne(optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Cart cart;
 
     @ManyToOne(optional = false)
@@ -32,7 +32,7 @@ public class CartItem extends AbsEntity {
     @Column(length = 9, nullable = false)
     private Double amount;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private PriceRow priceRow;
 
     private Double summary;

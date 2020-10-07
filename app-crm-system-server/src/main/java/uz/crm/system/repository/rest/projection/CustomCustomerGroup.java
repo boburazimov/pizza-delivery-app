@@ -2,10 +2,10 @@ package uz.crm.system.repository.rest.projection;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.rest.core.config.Projection;
-import uz.crm.system.entity.catalogs.ClientGroup;
+import uz.crm.system.entity.catalogs.CustomerGroup;
 
-@Projection(name = "customClientGroup", types = ClientGroup.class)
-public interface CustomClientGroup {
+@Projection(name = "customCustomerGroup", types = CustomerGroup.class)
+public interface CustomCustomerGroup {
 
     Integer getId();
 

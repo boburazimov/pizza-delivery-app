@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.crm.system.entity.documents.Cart;
+import uz.crm.system.entity.documents.Order;
 import uz.crm.system.entity.enums.GenderEnum;
 import uz.crm.system.entity.template.AbsEntity;
 
@@ -21,7 +22,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Client extends AbsEntity {
+public class Customer extends AbsEntity {
 
     @Column(length = 32)
     private String fullName;
@@ -32,13 +33,19 @@ public class Client extends AbsEntity {
     private Date birthDate;
 
     @ManyToOne
-    private ClientGroup group;
+    private CustomerGroup group;
 
     @Column(nullable = false, unique = true, length = 13)
     private String phoneNumber;
 
     private String extraInfo;
 
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Cart> carts;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Address> addresses;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders;
 }

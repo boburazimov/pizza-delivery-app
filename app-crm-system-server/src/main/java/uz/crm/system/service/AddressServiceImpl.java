@@ -15,7 +15,7 @@ import uz.crm.system.payload.ReqAddress;
 import uz.crm.system.payload.ResAddress;
 import uz.crm.system.payload.ResPageable;
 import uz.crm.system.repository.AddressRepository;
-import uz.crm.system.repository.ClientRepository;
+import uz.crm.system.repository.CustomerRepository;
 import uz.crm.system.repository.rest.DistrictRepository;
 import uz.crm.system.utils.CommonUtils;
 
@@ -28,7 +28,7 @@ public class AddressServiceImpl implements AddressService {
     @Autowired
     AddressRepository addressRepository;
     @Autowired
-    ClientRepository clientRepository;
+    CustomerRepository customerRepository;
     @Autowired
     DistrictRepository districtRepository;
 
@@ -40,8 +40,8 @@ public class AddressServiceImpl implements AddressService {
             if (request.getId() != null)
                 address = addressRepository.findById(request.getId())
                         .orElseThrow(() -> new ResourceNotFoundException("getAddress"));
-            address.setClient(clientRepository.findById(request.getClientId())
-                    .orElseThrow(() -> new ResourceNotFoundException("getClientId")));
+            address.setCustomer(customerRepository.findById(request.getCustomerId())
+                    .orElseThrow(() -> new ResourceNotFoundException("getCustomerId")));
             address.setDistrict(districtRepository.findById(request.getDistrictId())
                     .orElseThrow(() -> new ResourceNotFoundException("getDistrictId")));
             address.setStreetHome(request.getStreetHome());
@@ -60,8 +60,8 @@ public class AddressServiceImpl implements AddressService {
 
         return new ResAddress(
                 address.getId(),
-                address.getClient().getId(),
-                address.getClient().getFullName(),
+                address.getCustomer().getId(),
+                address.getCustomer().getFullName(),
                 address.getDistrict() == null ? null : address.getDistrict().getId(),
                 address.getDistrict() == null ? null : address.getDistrict().getName(),
                 address.getStreetHome(),
