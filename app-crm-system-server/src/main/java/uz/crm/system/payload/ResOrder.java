@@ -23,6 +23,8 @@ public class ResOrder {
 
     private UUID userId;
 
+    private Boolean isPayed;
+
     private String userFullName;
 
     private UUID restaurantId;

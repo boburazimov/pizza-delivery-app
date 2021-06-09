@@ -9,6 +9,10 @@ import uz.crm.system.entity.template.AbsIdEntity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+/**
+ * Размер блюдо: Пицца
+ **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

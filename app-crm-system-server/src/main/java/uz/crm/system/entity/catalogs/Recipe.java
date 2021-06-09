@@ -12,6 +12,10 @@ import javax.persistence.OneToOne;
 import java.time.Duration;
 import java.util.List;
 
+/**
+ * Вариант комплектации - рецептура, можно использовать для шаблонизации готовый блюд. TODO - нужно сделать сделать документ для Комплектации номенклатуры
+ **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
@@ -19,15 +23,15 @@ import java.util.List;
 @Entity
 public class Recipe extends AbsEntity {
 
-    private String name;
+    private String name; // Наименование Рецептуры
 
     @OneToOne
-    private Product endProduct;
+    private Product endProduct; // Конечный готовая блюда
 
-    private Double amount;
+    private Double amount;  // Кол-во ингредиента
 
-    private Duration cookTime;
+    private Duration cookTime;  // Время приготовление
 
     @OneToMany
-    private List<Product> ingredients;
+    private List<Product> ingredients; // Комплектующие продукты для блюдо.
 }

@@ -10,6 +10,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+/**
+ * Ресторан - само заведение, можно использовать в случаи когда есть сеть ресторанов под главную Компанию.
+ **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

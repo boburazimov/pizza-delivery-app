@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Табличная часть документа Установки цен
+ * Документ для установки цен, в документе будет табличная часть PriceRow.
  **/
 
 @EqualsAndHashCode(callSuper = true)

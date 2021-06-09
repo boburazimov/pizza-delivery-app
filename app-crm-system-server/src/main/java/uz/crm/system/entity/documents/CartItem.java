@@ -13,7 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
 /**
- * Табличная часть Корзинки
+ * Табличная часть Корзинки - каждый товар будет хранится отдельно в этой таблице
  **/
 
 @EqualsAndHashCode(callSuper = true)

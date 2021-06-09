@@ -10,7 +10,7 @@ import uz.crm.system.payload.ResOrder;
 import uz.crm.system.payload.ResPageable;
 
 import java.util.UUID;
-
+// TODO Ending this service by logic
 @Service
 public class OrderServiceImpl implements OrderService {
 

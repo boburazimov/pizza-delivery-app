@@ -10,6 +10,10 @@ import uz.crm.system.entity.template.AbsEntity;
 
 import javax.persistence.*;
 
+ /**
+ * Оплата от клиента, дальнейшим должно служить для оплаты через PayMe.
+ **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

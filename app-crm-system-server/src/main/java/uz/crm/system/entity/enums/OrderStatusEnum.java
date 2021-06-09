@@ -1,6 +1,6 @@
 package uz.crm.system.entity.enums;
 
-/** Статусы для заказака, доставки и т.д **/
+/** Статусы для заказа, доставки и т.д **/
 
 public enum OrderStatusEnum {
 

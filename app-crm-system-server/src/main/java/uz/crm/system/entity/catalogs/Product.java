@@ -10,6 +10,10 @@ import uz.crm.system.entity.template.AbsEntity;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Продукт. TODO (нужно обсудить, будет ли надобность сделать еще один сущность для готовой продукции - Блюдо)
+ **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

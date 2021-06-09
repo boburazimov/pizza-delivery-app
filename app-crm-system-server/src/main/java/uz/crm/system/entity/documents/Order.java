@@ -16,6 +16,10 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Заказы от клиентов - будут хранится в разрезе клиента, официанта.
+ **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
@@ -45,6 +49,9 @@ public class Order extends AbsEntity {
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
+
+
+    private Boolean isPayed; // не оплачен - FALSE. оплачен - TRUE.
 
     @OneToMany(mappedBy = "order")
     private List<Payment> payments;

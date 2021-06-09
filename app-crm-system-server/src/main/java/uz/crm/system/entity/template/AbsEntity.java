@@ -13,6 +13,10 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.UUID;
 
+/**
+ * Не сущность - шаблон для сущностей с одинаковыми свойствами (простой вариант - AbsIdEntity).
+ **/
+
 @Data
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)

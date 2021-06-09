@@ -13,6 +13,11 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Пользователь в системе.
+ * TODO нужно продумать, будем ли использовать только эту сущность для входа в систему или еще другой.
+ **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

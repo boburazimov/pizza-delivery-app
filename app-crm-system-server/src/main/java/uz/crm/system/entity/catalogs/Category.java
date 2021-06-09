@@ -10,7 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 /**
- * Категория для товаров
+ * Категория для товаров: молочка, сухофрукты, зелень и т.д.
+ * topCategory - является ли товар в топе.
  **/
 
 @EqualsAndHashCode(callSuper = true)

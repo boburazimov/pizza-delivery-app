@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 /**
- * Группировка клиентов на разные типы по мнению компании
+ * Группировка клиентов на разные типы: Лояльные, Черный список и т.д.
  **/
 
 @EqualsAndHashCode(callSuper = true)

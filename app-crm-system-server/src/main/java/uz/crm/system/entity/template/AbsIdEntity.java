@@ -4,6 +4,10 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * Не сущность - шаблон для сущностей с одинаковыми свойствами (сложный вариант - AbsEntity).
+ **/
+
 @Data
 @MappedSuperclass
 public abstract class AbsIdEntity {

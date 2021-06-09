@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Клиентская база
+ * Клиентская база - Покупатели / Клиенты.
  **/
 
 @EqualsAndHashCode(callSuper = true)

@@ -9,6 +9,10 @@ import uz.crm.system.entity.template.AbsEntity;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
+/**
+ * Для хранение тело файлов, информация о файле (размер, тип и.тд.) будут храниться в Attachment.
+ **/
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

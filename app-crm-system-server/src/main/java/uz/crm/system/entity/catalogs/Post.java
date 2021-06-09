@@ -10,7 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 /**
- * Должности для разграничение доступов к ресусрам
+ * Должности для разграничение доступов к ресурсам (должность сотрудников ресторана).
  **/
 
 @EqualsAndHashCode(callSuper = true)

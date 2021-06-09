@@ -30,7 +30,7 @@ public class OrderItem extends AbsEntity {
     private Product product;
 
     @Column(length = 9, nullable = false)
-    private Double amount;
+    private Double portion;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private PriceRow priceRow;

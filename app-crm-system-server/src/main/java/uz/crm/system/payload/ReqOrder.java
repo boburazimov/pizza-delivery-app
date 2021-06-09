@@ -21,6 +21,8 @@ public class ReqOrder {
 
     private Date onTime;
 
+    private Boolean isPayed;
+
     private UUID restaurantId;
 
     private List<UUID> tableRows;

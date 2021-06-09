@@ -10,7 +10,7 @@ import uz.crm.system.entity.template.AbsIdEntity;
 import javax.persistence.Entity;
 
 /**
- * Головное предприятие в случии если будут дочерные или же сетевые ресораны
+ * Головное предприятие в случаи если будут дочерные или же сетевые рестораны.
  **/
 
 @EqualsAndHashCode(callSuper = true)

@@ -8,6 +8,10 @@ import uz.crm.system.entity.enums.RoleNameEnum;
 
 import javax.persistence.*;
 
+/**
+ * Роли сотрудников, пользователей в системе - для разграничение доступа к ресурсам и к данным.
+ **/
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
